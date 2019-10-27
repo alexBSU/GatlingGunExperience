@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using UnityEditor;
 #endif
 
-#if AVATAR_INTERNAL
+//#if AVATAR_INTERNAL
 using UnityEngine.Events;
-#endif
+//#endif
 
 [System.Serializable]
 public class AvatarLayer
@@ -175,10 +175,13 @@ public class OvrAvatar : MonoBehaviour
     internal OvrAvatarHand HandRight = null;
     internal ovrAvatarLookAndFeelVersion LookAndFeelVersion = ovrAvatarLookAndFeelVersion.Two;
     internal ovrAvatarLookAndFeelVersion FallbackLookAndFeelVersion = ovrAvatarLookAndFeelVersion.Two;
-#if AVATAR_INTERNAL
-    public AvatarControllerBlend BlendController;
+
     public UnityEvent AssetsDoneLoading = new UnityEvent();
-#endif
+
+    #if AVATAR_INTERNAL
+    public AvatarControllerBlend BlendController;
+    #endif
+
 
     // Avatar packets
     public class PacketEventArgs : EventArgs
