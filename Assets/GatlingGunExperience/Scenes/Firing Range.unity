@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 48.946568, g: 69.27693, b: 109.81082, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,7 +210,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5175449}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7011584
+--- !u!114 &34327824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2428,7 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: dab0766de4a4b5349b80ce1a86555414, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 7011584}
+  m_SkySettings: {fileID: 34327824}
   m_SkySettingsFromProfile: {fileID: 5758136461106579282, guid: dab0766de4a4b5349b80ce1a86555414,
     type: 2}
 --- !u!114 &1288412505
@@ -2930,7 +2930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557875731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06700069, y: 1.196, z: -0.046000347}
+  m_LocalPosition: {x: 0.06700073, y: 1.196, z: -0.04600037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 813081659}
@@ -4657,21 +4657,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4351529713004396385, guid: ec10764da0c3da641a27b713c0f5f308,
-        type: 3}
-      propertyPath: rotationAction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4351529713004396385, guid: ec10764da0c3da641a27b713c0f5f308,
-        type: 3}
-      propertyPath: grabbedFriction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4351529713004396385, guid: ec10764da0c3da641a27b713c0f5f308,
-        type: 3}
-      propertyPath: detachDistance
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec10764da0c3da641a27b713c0f5f308, type: 3}
