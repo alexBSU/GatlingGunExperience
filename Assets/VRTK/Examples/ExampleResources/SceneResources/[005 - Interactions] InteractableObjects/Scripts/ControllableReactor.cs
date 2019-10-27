@@ -4,7 +4,7 @@
     using UnityEngine.UI;
     using VRTK.Controllables;
 
-    public class ControllableReactor : MonoBehaviour
+    public class BigWillyRotator : MonoBehaviour
     {
         public VRTK_BaseControllable controllable;
         public Text displayText;
@@ -13,7 +13,7 @@
 
         protected virtual void OnEnable()
         {
-            controllable = (controllable == null ? GetComponent<VRTK_BaseControllable>() : controllable);
+            controllable = controllable == null ? GetComponent<VRTK_BaseControllable>() : controllable;
             controllable.ValueChanged += ValueChanged;
             controllable.MaxLimitReached += MaxLimitReached;
             controllable.MinLimitReached += MinLimitReached;
