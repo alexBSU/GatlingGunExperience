@@ -16,7 +16,7 @@ public class BigWillyRotator : MonoBehaviour
     {
         if (ObjectToRotate != null)
         {
-            ObjectToRotate.Rotate(0, 10, 0, Space.Self);
+            ObjectToRotate.Rotate(0, 6, 0, Space.Self);
         }
     }
 }
