@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ExcludeTeleport
+  - SnapCylinder
+  - TeleportIgnore
+  - Fader
+  - Blackout
+  - FadeScript
   layers:
   - Default
   - TransparentFX
