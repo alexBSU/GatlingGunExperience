@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/VRTK/Examples/[005 - Interactions] InteractableObjects.unity
+- path: Assets/GatlingGunExperience/Scenes/Firing Range.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
