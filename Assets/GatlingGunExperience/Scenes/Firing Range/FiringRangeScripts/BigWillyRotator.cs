@@ -5,26 +5,36 @@ public class BigWillyRotator : MonoBehaviour
 {
     public VRTK_BaseControllable controllable;
     public Transform ObjectToRotate;
-    public AudioSource gunSource;
-    public ParticleSystem gunFlash;
+    private float lastValue;
 
     protected virtual void OnEnable()
     {
         controllable = controllable == null ? GetComponent<VRTK_BaseControllable>() : controllable;
         controllable.ValueChanged += ValueChanged;
-        Debug.Log("Now have ref to " + gunFlash);
+        lastValue = controllable.GetValue();
     }
 
     protected virtual void ValueChanged(object sender, ControllableEventArgs e)
     {
         if (ObjectToRotate != null)
         {
-            ObjectToRotate.Rotate(0, 15, 0, Space.Self);
-        }
-        if (ObjectToRotate.localEulerAngles.y % 15 == 0)
-        {
-            gunFlash.Play();
-            gunSource.Play();
+            //float newValue = ObjectToRotate.transform.rotation.z;
+            float newValue = controllable.GetValue();
+
+            if (newValue - lastValue > Mathf.Abs(5))
+            {
+                if (newValue > lastValue)
+                {
+                    ObjectToRotate.Rotate(0, 0, 5, Space.Self);
+                }
+                else
+                {
+                    //ObjectToRotate.Rotate(0, 0, -2, Space.Self);
+
+                    //play a clink sound??
+                }
+            }
+            lastValue = newValue;
         }
     }
 }
