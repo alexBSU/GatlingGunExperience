@@ -10,6 +10,8 @@ TagManager:
   - Fader
   - Blackout
   - FadeScript
+  - FxTemporaire
+  - Cartridge
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - 
   - PostProcessing
   - AssetsLayer
-  - 
-  - 
+  - FirePin
+  - Bullet
   - 
   - 
   - 
