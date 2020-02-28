@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/samplescene.unity
     guid: cbfe36cfddfde964d9dfce63a355d5dd
   - enabled: 1
-    path: Assets/GatlingGunExperience/Scenes/Firing Range.unity
+    path: Assets/GatlingGunExperience/Scenes/FiringRange.unity
     guid: a294923b3ce94e14390c1affe20fa5b0
   m_configObjects: {}
