@@ -1,30 +1,6 @@
-Base path: 'C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.2.9f1/Editor/Data/PlaybackEngines'
+Base path: 'D:/Unity/2019.2.9f1/Editor/Data', plugins path 'D:/Unity/2019.2.9f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=4 insize=19040 outsize=1491 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=15806 outsize=62481 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=1176 outsize=800 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=3070 outsize=48128 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=10881 outsize=9684 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=4855 outsize=5412 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=7611 outsize=1128 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=13984 outsize=3986 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=8884 outsize=813 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=37247 outsize=33663 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=16084 outsize=7553 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=2684 outsize=2186 ok=1
-Cmd: compileComputeKernel
-  api=4 insize=10127 outsize=3652 ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=6855 outsize=142 kw=_NORMALMAP_TANGENT_SPACE _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+  api=4 type=0 insize=6855 outsize=810 kw=_MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6855 outsize=810 kw=_NORMALMAP _MASKMAP pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
