@@ -12,10 +12,12 @@
         "integrationSavePath": "D:\\GitHubRepositories\\GatlingGunExperience",
         "selectedDCCApp": 0,
         "prefabSavePaths": [
+            "GatlingGunExperience/Models/Bullet",
             "LinkedPrefabExporter",
             "."
         ],
         "fbxSavePaths": [
+            "GatlingGunExperience/Models/Bullet/FBX",
             "LinkedFBXExporter",
             "."
         ],

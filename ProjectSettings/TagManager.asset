@@ -12,6 +12,7 @@ TagManager:
   - FadeScript
   - FxTemporaire
   - Cartridge
+  - Barrel
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - AssetsLayer
   - FirePin
   - Bullet
-  - 
+  - Targets
   - 
   - 
   - 
