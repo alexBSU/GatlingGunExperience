@@ -7,6 +7,8 @@ public class BigWillyRotator : MonoBehaviour
     public VRTK_BaseControllable yawController;
     public Transform ObjectToRotate;
     public Animator gunOscillator;
+    public AudioSource yawWheelAudioSound;
+    public AudioClip[] yawWheelClips;
     private float lastValue;
 
     private bool osciallation = false;
@@ -54,13 +56,17 @@ public class BigWillyRotator : MonoBehaviour
 
     protected virtual void yawValueChanged(object sender, ControllableEventArgs e)
     {
-        if (yawController.GetValue() >= 120)
+        if (yawController.GetValue() >= 90 && osciallation == false)
         {
             osciallation = true;
+            yawWheelAudioSound.clip = yawWheelClips[1];
+            yawWheelAudioSound.PlayOneShot(yawWheelAudioSound.clip);
             Debug.Log("Oscillation is now true.");
         }
-        else
+        if (yawController.GetValue() <= 90 && osciallation == true)
         {
+            yawWheelAudioSound.clip = yawWheelClips[0];
+            yawWheelAudioSound.PlayOneShot(yawWheelAudioSound.clip);
             Debug.Log("Oscillation is now false");
             osciallation = false;
         }

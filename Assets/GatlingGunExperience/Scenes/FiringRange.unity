@@ -1238,6 +1238,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 261331889}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &265507363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1655025568955808745, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7348935769249308507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4336734042c41f4eb675e0c59c78c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &342622097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1681,82 +1693,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 649281883}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &653082347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 1
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  sunSize:
-    m_OverrideState: 0
-    m_Value: 0.04
-    min: 0
-    max: 1
-  sunSizeConvergence:
-    m_OverrideState: 0
-    m_Value: 5
-    min: 1
-    max: 10
-  atmosphereThickness:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 5
-  skyTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  groundColor:
-    m_OverrideState: 0
-    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  enableSunDisk:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1 &663686410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2139,82 @@ MonoBehaviour:
     position: {x: -0.0116, y: 0.0523, z: -0.0723}
     rotation: {x: 45, y: 0, z: 70}
     scale: {x: 1, y: 1, z: 1}
+--- !u!114 &907939239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 1
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  sunSize:
+    m_OverrideState: 0
+    m_Value: 0.04
+    min: 0
+    max: 1
+  sunSizeConvergence:
+    m_OverrideState: 0
+    m_Value: 5
+    min: 1
+    max: 10
+  atmosphereThickness:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 5
+  skyTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  groundColor:
+    m_OverrideState: 0
+    m_Value: {r: 0.369, g: 0.349, b: 0.341, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  enableSunDisk:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1 &928506492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,7 +3738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: dab0766de4a4b5349b80ce1a86555414, type: 2}
   m_StaticLightingSkyUniqueID: 2
-  m_SkySettings: {fileID: 653082347}
+  m_SkySettings: {fileID: 907939239}
   m_SkySettingsFromProfile: {fileID: 5758136461106579282, guid: dab0766de4a4b5349b80ce1a86555414,
     type: 2}
 --- !u!114 &1288412505
@@ -7330,6 +7342,108 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceOculusFloorLevel: 1
+--- !u!1 &1544541613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1913155258265471302, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7348935769249308507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1544541614
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544541613}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1557875731
 GameObject:
   m_ObjectHideFlags: 0
@@ -7358,7 +7472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557875731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06700362, y: 1.196, z: -0.046005063}
+  m_LocalPosition: {x: 0.06700362, y: 1.196, z: -0.046005353}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 813081659}
@@ -9407,51 +9521,76 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1352294648449080232, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    - target: {fileID: 1655025568955808745, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1352294648449080232, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+      propertyPath: magazineSnapZone
+      value: 
+      objectReference: {fileID: 1544541613}
+    - target: {fileID: 2253754570388831601, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.7
+      propertyPath: snapType
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1352294648449080232, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    - target: {fileID: 2253754570388831601, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.7
+      propertyPath: snapDuration
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 8666430901035076234, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.7
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.size
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8666430901035076234, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.7
+      propertyPath: OnObjectUnsnappedFromDropZone.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8666430901035076234, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5007967327278933987, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 265507363}
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.813
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckMag
       objectReference: {fileID: 0}
-    - target: {fileID: 5007967327278933987, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.6022033
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5007967327278933987, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
         type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 1.7228189
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+        type: 3}
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+        type: 3}
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1544541614}
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+        type: 3}
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+        type: 3}
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995765773779853186, guid: e1900cf50eaaf4f41bf4f33a93b853f1,
+        type: 3}
+      propertyPath: OnObjectSnappedToDropZone.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 433c3a65b5bec274a8d2d76d61dcbedb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1900cf50eaaf4f41bf4f33a93b853f1, type: 3}
 --- !u!1001 &7600674460006792818

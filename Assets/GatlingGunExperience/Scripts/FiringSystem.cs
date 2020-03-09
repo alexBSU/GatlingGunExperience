@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class FiringSystem : MonoBehaviour
 {
     //public AudioSource gunSource;
     public ParticleSystem gunFlash;
     public AudioSource gunSoundSource;
+    public AudioClip[] audioClipArray;
     public Transform bulletDrop;
 
     public int weaponDamage = 1;
@@ -14,16 +16,34 @@ public class FiringSystem : MonoBehaviour
     public GameObject spentBullet;
     public GameObject barrelEffectPrefab;
     public GameObject sandEffectPrefab;
+    public GameObject magazineSnapZone;
+    public GameObject currentMagazine;
+
+    public int currentAmmo;
 
     [SerializeField]
     private LayerMask mask;
 
     private void OnTriggerEnter(Collider other)
     {
-        gunFlash.Play();
-        gunSoundSource.PlayOneShot(gunSoundSource.clip);
-        Instantiate(spentBullet, bulletDrop);
-        Shoot();
+        MagazineAmmo magazine = currentMagazine.GetComponent<MagazineAmmo>();
+        currentAmmo = magazine.currentmagazineAmmo;
+        Debug.Log("Current Ammon is: " + currentAmmo);
+
+        if (currentAmmo > 0)
+        {
+            magazine.ExpendAmmo();
+            gunFlash.Play();
+            gunSoundSource.clip = audioClipArray[1];
+            gunSoundSource.PlayOneShot(gunSoundSource.clip);
+            Instantiate(spentBullet, bulletDrop);
+            Shoot();
+        }
+        else
+        {
+            gunSoundSource.clip = audioClipArray[0];
+            gunSoundSource.PlayOneShot(gunSoundSource.clip);
+        }
     }
 
     void Shoot()
@@ -45,5 +65,15 @@ public class FiringSystem : MonoBehaviour
                 Destroy(_hitEffect, 2f);
             }
         }
+    }
+     public void CheckMag()
+    {
+        Debug.Log("We now have a reference to the current Magazine in the Gatling Gun!*********************************");
+        currentMagazine = magazineSnapZone.GetComponent<VRTK_SnapDropZone>().GetCurrentSnappedObject();
+    }
+
+    public void RemovedMag()
+    {
+
     }
 }
