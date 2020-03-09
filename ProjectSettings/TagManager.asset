@@ -13,6 +13,13 @@ TagManager:
   - FxTemporaire
   - Cartridge
   - Barrel
+  - Leg
+  - SnapCube
+  - Arm
+  - Saucers
+  - Torso
+  - Head
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -27,7 +34,7 @@ TagManager:
   - FirePin
   - Bullet
   - Targets
-  - 
+  - GrabLayer
   - 
   - 
   - 

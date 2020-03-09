@@ -6,13 +6,14 @@ public class FiringSystem : MonoBehaviour
 {
     //public AudioSource gunSource;
     public ParticleSystem gunFlash;
-    public GameObject spentBullet;
     public AudioSource gunSoundSource;
     public Transform bulletDrop;
 
-    //public float timeToLive = 3f;
     public int weaponDamage = 1;
+
+    public GameObject spentBullet;
     public GameObject barrelEffectPrefab;
+    public GameObject sandEffectPrefab;
 
     [SerializeField]
     private LayerMask mask;
@@ -25,17 +26,6 @@ public class FiringSystem : MonoBehaviour
         Shoot();
     }
 
-    //void OnHit(Vector3 _pos, Vector3 _normal)
-    //{
-    //    DoBarrelHitEffect(_pos, _normal);
-    //}
-
-    //void DoBarrelHitEffect(Vector3 _pos, Vector3 _normal)
-    //{
-    //    GameObject _hitEffect = (GameObject)Instantiate(barrelEffectPrefab, _pos, Quaternion.LookRotation(_normal));
-    //    Destroy(_hitEffect, 2f);
-    //}
-
     void Shoot()
     {
         RaycastHit _hit;
@@ -47,6 +37,12 @@ public class FiringSystem : MonoBehaviour
                 Destroy(_hitEffect, 2f);
 
                 _hit.collider.gameObject.GetComponent<BarrelDamage>().barrelHP -= weaponDamage;
+                _hitEffect.transform.SetParent(_hit.collider.gameObject.transform);
+            }
+            if (_hit.collider.tag == "Ground")
+            {
+                GameObject _hitEffect = (GameObject)Instantiate(sandEffectPrefab, _hit.point, Quaternion.LookRotation(_hit.normal));
+                Destroy(_hitEffect, 2f);
             }
         }
     }
