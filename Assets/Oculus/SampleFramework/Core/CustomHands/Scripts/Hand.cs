@@ -168,7 +168,7 @@ namespace OVRTouchSample
             float sign = isDown ? 1.0f : -1.0f;
             return Mathf.Clamp01(value + rateDelta * sign);
         }
-
+        //public float handExp;
         private void UpdateAnimStates()
         {
             bool grabbing = m_grabber.grabbedObject != null;
@@ -184,7 +184,10 @@ namespace OVRTouchSample
 
             // Flex
             // blend between open hand and fully closed fist
+            //handExp = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
+
             float flex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
+
             m_animator.SetFloat(m_animParamIndexFlex, flex);
 
             // Point

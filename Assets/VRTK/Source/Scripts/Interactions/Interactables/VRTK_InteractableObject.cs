@@ -456,6 +456,7 @@ namespace VRTK
         {
             if (grabbingObjects.Count > 0 && grabbedBy != null)
             {
+                Debug.Log("This: " + grabbedBy.name + " is grabbing this: " + grabbingObjects.ToString());
                 return (grabbingObjects.Contains(grabbedBy));
             }
             return (grabbingObjects.Count > 0);

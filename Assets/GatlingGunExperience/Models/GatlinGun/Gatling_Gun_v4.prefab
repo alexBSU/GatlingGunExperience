@@ -1133,7 +1133,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.813, y: 0.6022033, z: 1.7228189}
+  m_ConnectedAnchor: {x: 0, y: 0.5993396, z: 0.07240555}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -4878,22 +4878,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407163255507454173, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 407163255532741727, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 407163255507454163, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407163255507454161, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
+    - target: {fileID: 407163255507454173, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
         type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -4908,17 +4898,27 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 407163255507454163, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407163255507454161, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407163255507454175, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 407163255507454171, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
         type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 407163255507454169, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407163255507454175, guid: 7c533e5ccd5c32f4592ebe32c48413f6,
         type: 3}
       propertyPath: playOnAwake
       value: 0
