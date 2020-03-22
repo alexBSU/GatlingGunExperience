@@ -21,6 +21,8 @@ TagManager:
   - Head
   - Ground
   - CustomHand
+  - CustomHand_L
+  - CustomHand_R
   layers:
   - Default
   - TransparentFX
