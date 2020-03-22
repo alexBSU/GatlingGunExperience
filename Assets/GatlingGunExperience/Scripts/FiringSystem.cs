@@ -20,17 +20,19 @@ public class FiringSystem : MonoBehaviour
     public GameObject currentMagazine;
 
     public int currentAmmo;
+    public bool spinnningForward;
 
     [SerializeField]
     private LayerMask mask;
 
     private void OnTriggerEnter(Collider other)
     {
+        CheckMag();
+        CheckSpinDirection();
         MagazineAmmo magazine = currentMagazine.GetComponent<MagazineAmmo>();
         currentAmmo = magazine.currentmagazineAmmo;
-        Debug.Log("Current Ammon is: " + currentAmmo);
 
-        if (currentAmmo > 0)
+        if (currentMagazine != null && currentAmmo > 0)
         {
             magazine.ExpendAmmo();
             gunFlash.Play();
@@ -68,12 +70,13 @@ public class FiringSystem : MonoBehaviour
     }
      public void CheckMag()
     {
-        Debug.Log("We now have a reference to the current Magazine in the Gatling Gun!*********************************");
         currentMagazine = magazineSnapZone.GetComponent<VRTK_SnapDropZone>().GetCurrentSnappedObject();
     }
 
-    public void RemovedMag()
+    public void CheckSpinDirection()
     {
-
+        //if spinning clockwise spinningForward = true;
+        
+        //else spinningForward = false;
     }
 }

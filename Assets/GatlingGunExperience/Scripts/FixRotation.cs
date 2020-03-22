@@ -10,11 +10,7 @@ public class FixRotation : MonoBehaviour
     void Awake()
     {
         rotation = transform.rotation;
-        foreach (Transform child in transform)
-        {
-            if (child.tag == "CustomHand")
-                child.gameObject.SetActive(false);
-        }
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
     void LateUpdate()
     {

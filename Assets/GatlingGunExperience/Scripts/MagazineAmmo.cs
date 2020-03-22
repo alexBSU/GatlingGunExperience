@@ -14,13 +14,10 @@ public class MagazineAmmo : MonoBehaviour
 
     public void ExpendAmmo()
     {
-        if (GetComponent<Transform>().childCount - 1 >= 3)
+        if (GetComponent<Transform>().childCount - 1 >= 5)
         {
             Destroy(GetComponent<Transform>().GetChild(GetComponent<Transform>().childCount - 1).gameObject);
         }
-        
-
-        Debug.Log("Destroy Bullet From Magazine Case Here!!*****");
        
         if (currentmagazineAmmo > 0)
         {
@@ -28,7 +25,7 @@ public class MagazineAmmo : MonoBehaviour
         }
         else
         {
-            Debug.Log("There is now more ammo in this Magazine!");
+            Debug.Log("There is no more ammo in this Magazine!");
             return;
         }
     }

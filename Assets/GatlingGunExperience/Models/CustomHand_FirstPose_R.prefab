@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 9187993078232248655}
   m_Layer: 0
   m_Name: CustomHand_FirstPose_R
-  m_TagString: Untagged
+  m_TagString: CustomHand_R
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
