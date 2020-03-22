@@ -20,6 +20,7 @@ TagManager:
   - Torso
   - Head
   - Ground
+  - CustomHand
   layers:
   - Default
   - TransparentFX

@@ -97,6 +97,11 @@ namespace VRTK
         {
             if (ControllerStartGrabInteractableObject != null)
             {
+                foreach (Transform child in transform)
+                {
+                    if (child.tag == "CustomHand")
+                        child.gameObject.SetActive(false);
+                }
                 ControllerStartGrabInteractableObject(this, e);
             }
         }
@@ -121,6 +126,11 @@ namespace VRTK
         {
             if (ControllerUngrabInteractableObject != null)
             {
+                foreach (Transform child in transform)
+                {
+                    if (child.tag == "CustomHand")
+                        child.gameObject.SetActive(true);
+                }
                 ControllerUngrabInteractableObject(this, e);
             }
         }
