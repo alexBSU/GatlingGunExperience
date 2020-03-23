@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291640810}
   m_Layer: 0
-  m_Name: GattlingGun_Pivot
+  m_Name: GattlingGun_HingePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,13 +23,57 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291640809}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.018, z: 0.633}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4619943638559429624}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1259969930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259969931}
+  - component: {fileID: 1259969932}
+  m_Layer: 13
+  m_Name: GattlingGun_GrabPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259969931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259969930}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00080001354, y: -0.38023958, z: -0.85210556}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7335935930139484282}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1259969932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259969930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.17578042, z: 0.30720568}
+  m_Center: {x: 0, y: 0.05699393, z: 0.005748607}
 --- !u!1 &1669757266
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +395,76 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &503194302163353943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2708353973715407639}
+  - component: {fileID: 8303318358290108771}
+  m_Layer: 0
+  m_Name: Gatling_Gun_Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2708353973715407639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503194302163353943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7335935930139484282}
+  m_Father: {fileID: 4619943638559429624}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8303318358290108771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503194302163353943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7530eeaa128faef459301a47f43f38ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operateAxis: 1
+  ignoreCollisionsWith: []
+  excludeColliderCheckOn: []
+  equalityFidelity: 0.001
+  hingePoint: {fileID: 291640810}
+  angleLimits:
+    minimum: -20
+    maximum: 20
+  minMaxThresholdAngle: 1
+  restingAngle: 0
+  forceRestingAngleThreshold: 1
+  angleTarget: 0
+  isLocked: 0
+  stepValueRange:
+    minimum: 0
+    maximum: 1
+  stepSize: 0.1
+  useStepAsValue: 1
+  snapToStep: 0
+  snapForce: 10
+  precisionGrab: 1
+  detachDistance: 1
+  rotationAction: 0
+  grabbedFriction: 10
+  releasedFriction: 10
+  onlyInteractWith: []
 --- !u!1 &516680315326798496
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +818,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041424312316533681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.00000020861621, y: -0.00000046816626, z: 0.00000013608997,
+    w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1313,7 +1428,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.813, y: 0.6022033, z: 1.7228189}
+  m_ConnectedAnchor: {x: -0.813, y: 0.60220325, z: 1.7228189}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1783,8 +1898,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2426924480661634283}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.46423957, z: -0.12029445}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.48323956, z: -0.75329447}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1128925462602883964}
@@ -1795,7 +1910,8 @@ Transform:
   - {fileID: 8549305066466380025}
   - {fileID: 645343885711394153}
   - {fileID: 2709425865582015699}
-  m_Father: {fileID: 4619943638559429624}
+  - {fileID: 1259969931}
+  m_Father: {fileID: 2708353973715407639}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1443918186109152227
@@ -1854,10 +1970,10 @@ BoxCollider:
   m_GameObject: {fileID: 2426924480661634283}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.0679207, y: 0.15281086, z: 0.1466912}
-  m_Center: {x: 0, y: 0.22452474, z: 0.76608664}
+  m_Size: {x: 0.44549346, y: 0.15281087, z: 0.1466912}
+  m_Center: {x: -0.3112136, y: 0.22452474, z: 0.76608664}
 --- !u!1 &2587748634278904761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,7 +2983,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4992398227949111479}
-  m_LocalRotation: {x: -0.0000024810286, y: 0.0000016172123, z: 0.000000018686725,
+  m_LocalRotation: {x: -0.0000024559702, y: 0.0000017596756, z: 0.00000006038942,
     w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4475,7 +4591,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4619943638559429624}
-  - component: {fileID: 777513553}
   m_Layer: 0
   m_Name: Gatling_Gun_v4
   m_TagString: Untagged
@@ -4494,49 +4609,11 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7335935930139484282}
+  - {fileID: 2708353973715407639}
   - {fileID: 291640810}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &777513553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8522516507219976683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7530eeaa128faef459301a47f43f38ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operateAxis: 1
-  ignoreCollisionsWith: []
-  excludeColliderCheckOn: []
-  equalityFidelity: 0.001
-  hingePoint: {fileID: 291640810}
-  angleLimits:
-    minimum: -180
-    maximum: 180
-  minMaxThresholdAngle: 1
-  restingAngle: 0
-  forceRestingAngleThreshold: 1
-  angleTarget: 0
-  isLocked: 0
-  stepValueRange:
-    minimum: 0
-    maximum: 1
-  stepSize: 0.1
-  useStepAsValue: 1
-  snapToStep: 0
-  snapForce: 10
-  precisionGrab: 1
-  detachDistance: 1
-  rotationAction: 0
-  grabbedFriction: 1
-  releasedFriction: 1
-  onlyInteractWith: []
 --- !u!1 &8609760061110999305
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,15 +5165,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62476a50da7c1134a94228753a775ebd, type: 3}
---- !u!1 &1909215231812939167 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9187993078229072669, guid: 62476a50da7c1134a94228753a775ebd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7348935767876359810}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1909215231813166481 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9187993078228841235, guid: 62476a50da7c1134a94228753a775ebd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7348935767876359810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909215231812939167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9187993078229072669, guid: 62476a50da7c1134a94228753a775ebd,
     type: 3}
   m_PrefabInstance: {fileID: 7348935767876359810}
   m_PrefabAsset: {fileID: 0}

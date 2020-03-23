@@ -21,25 +21,36 @@ public class FiringSystem : MonoBehaviour
 
     public int currentAmmo;
     public bool spinnningForward;
+    public bool hasMagazine = false;
 
     [SerializeField]
     private LayerMask mask;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         CheckMag();
         CheckSpinDirection();
         MagazineAmmo magazine = currentMagazine.GetComponent<MagazineAmmo>();
         currentAmmo = magazine.currentmagazineAmmo;
 
-        if (currentMagazine != null && currentAmmo > 0)
+        Debug.Log("The current magazine is: " + magazine.name + "*********************");
+
+        if(hasMagazine == true)
         {
-            magazine.ExpendAmmo();
-            gunFlash.Play();
-            gunSoundSource.clip = audioClipArray[1];
-            gunSoundSource.PlayOneShot(gunSoundSource.clip);
-            Instantiate(spentBullet, bulletDrop);
-            Shoot();
+            if (currentAmmo > 0)
+            {
+                magazine.ExpendAmmo();
+                gunFlash.Play();
+                gunSoundSource.clip = audioClipArray[1];
+                gunSoundSource.PlayOneShot(gunSoundSource.clip);
+                Instantiate(spentBullet, bulletDrop);
+                Shoot();
+            }
+            else
+            {
+                gunSoundSource.clip = audioClipArray[0];
+                gunSoundSource.PlayOneShot(gunSoundSource.clip);
+            }
         }
         else
         {
@@ -66,6 +77,34 @@ public class FiringSystem : MonoBehaviour
                 GameObject _hitEffect = (GameObject)Instantiate(sandEffectPrefab, _hit.point, Quaternion.LookRotation(_hit.normal));
                 Destroy(_hitEffect, 2f);
             }
+            if (_hit.collider.tag == "Wagon")
+            {
+                Rigidbody hitObjectRB = _hit.collider.GetComponent<Rigidbody>();
+
+                if(hitObjectRB.useGravity == false)
+                {
+                    hitObjectRB.isKinematic = false;
+                    hitObjectRB.useGravity = true;                  
+                }
+
+                hitObjectRB.AddForce(_hit.point * 20);
+                GameObject _hitEffect = (GameObject)Instantiate(barrelEffectPrefab, _hit.point, Quaternion.LookRotation(_hit.normal));
+                Destroy(_hitEffect, 2f);
+
+                _hitEffect.transform.SetParent(_hit.collider.gameObject.transform);
+            }
+            if(_hit.collider.tag == "TNT")
+            {
+                Rigidbody hitObjectRB = _hit.collider.GetComponent<Rigidbody>();
+
+                hitObjectRB.AddForce(_hit.point * 10);
+
+                GameObject _hitEffect = (GameObject)Instantiate(barrelEffectPrefab, _hit.point, Quaternion.LookRotation(_hit.normal));
+                Destroy(_hitEffect, 2f);
+
+                _hit.collider.gameObject.GetComponent<TNTDamage>().tntHP -= weaponDamage;
+                _hitEffect.transform.SetParent(_hit.collider.gameObject.transform);
+            }
         }
     }
      public void CheckMag()
@@ -78,5 +117,16 @@ public class FiringSystem : MonoBehaviour
         //if spinning clockwise spinningForward = true;
         
         //else spinningForward = false;
+    }
+
+    public void HasMagazine()
+    {
+        //called by snapdrop zone VRTK_Snap Drop Zone event
+        hasMagazine = true;
+    }
+    public void HasNoMagazine()
+    {
+        //called by snapdrop zone VRTK_Snap Drop Zone event
+        hasMagazine = false;
     }
 }

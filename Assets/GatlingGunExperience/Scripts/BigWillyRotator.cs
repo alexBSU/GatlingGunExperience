@@ -23,7 +23,7 @@ public class BigWillyRotator : MonoBehaviour
     void Update()
     {
         crankAngle = this.transform.localEulerAngles.x;
-        Debug.Log("CrankHandle Angle is now: " + crankAngle);
+        //Debug.Log("CrankHandle Angle is now: " + crankAngle);
         
         if(crankAngle == 90)
         {
@@ -31,7 +31,7 @@ public class BigWillyRotator : MonoBehaviour
         }
 
         ObjectToRotate.transform.localEulerAngles = new Vector3(0, 0, this.gameObject.transform.eulerAngles.x);
-        Debug.Log("Barrels Angle is now: " + ObjectToRotate.transform.eulerAngles.z);
+        //Debug.Log("Barrels Angle is now: " + ObjectToRotate.transform.eulerAngles.z);
     }
 
     //protected virtual void ValueChanged(object sender, ControllableEventArgs e)
