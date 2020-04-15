@@ -34,7 +34,7 @@ public class TNTDamage : MonoBehaviour
             Rigidbody r = h.GetComponent<Rigidbody>();
             if (r != null)
             {
-                r.AddExplosionForce(explosionForce, wagonCartWrecked.transform.position, eplosionRadius);
+                r.AddExplosionForce(explosionForce, transform.position, eplosionRadius);
             }
         }
     }
