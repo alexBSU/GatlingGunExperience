@@ -27,32 +27,103 @@ public class FireRateGraphicsController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (fireRateConsoleControl.muzzlePressed == true)
         {
-            muzzleCircle.enabled = true;
-        } else
+            if (!muzzleCycleRunning)
+            {
+                MuzzleCycle();
+            }
+        }
+        else
         {
-            muzzleCircle.enabled = false;
+            if (muzzleCycleRunning)
+            {
+                MuzzleCycleOff();
+            }
         }
 
         if (fireRateConsoleControl.gatlingPressed == true)
         {
+            if (!gatlingCycleRunning)
+            {
+                GatlingCycle();
+            }
+        }
+        else
+        {
+            if (gatlingCycleRunning)
+            {
+                GatlingCycleOff();
+            }
+        }
+
+        if (fireRateConsoleControl.laterGatlingPressed == true)
+        {
+            if (!laterGatlingCycleRunning)
+            {
+                LaterGatlingCycle();
+            }
+        }
+        else
+        {
+            if (laterGatlingCycleRunning)
+            {
+                LaterGatlingCycleOff();
+            }
+        }
+    }
+
+    void MuzzleCycle()
+    {
+        if (muzzleCircle.enabled == false)
+        {
+            muzzleCircle.enabled = true;
+        }
+    }
+
+    void GatlingCycle()
+    {
+        if (gatlingCircle.enabled == false)
+        {
             gatlingCircle.enabled = true;
-        } else
+        }
+    }
+
+    void LaterGatlingCycle()
+    {
+        if (laterGatlingCircle.enabled == false)
+        {
+            laterGatlingCircle.enabled = true;
+        }
+    }
+
+    void MuzzleCycleOff()
+    {
+        if (muzzleCircle.enabled == true)
+        {
+            muzzleCircle.enabled = false;
+        }
+    }
+
+    void GatlingCycleOff()
+    {
+        if (gatlingCircle.enabled == true)
         {
             gatlingCircle.enabled = false;
         }
+    }
 
-        if(fireRateConsoleControl.laterGatlingPressed == true)
-        {
-            laterGatlingCircle.enabled = true;
-        } else
+    void LaterGatlingCycleOff()
+    {
+        if (laterGatlingCircle.enabled == true)
         {
             laterGatlingCircle.enabled = false;
         }
     }
+
+
 
     //void MuzzleCycle()
     //{
