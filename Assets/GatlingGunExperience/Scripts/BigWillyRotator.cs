@@ -11,7 +11,7 @@ public class BigWillyRotator : MonoBehaviour
 
     public Transform ObjectToRotate;
 
-    public float crankAngle = 0;
+    //public float crankAngle = 0;
 
     private bool osciallation = false;
 
@@ -22,16 +22,18 @@ public class BigWillyRotator : MonoBehaviour
 
     void Update()
     {
-        crankAngle = this.transform.localEulerAngles.x;
+        float crankAngle = this.transform.localEulerAngles.x;
+        //float crankAngle = this.transform.localRotation.x;
         //Debug.Log("CrankHandle Angle is now: " + crankAngle);
-        
-        if(crankAngle == 90)
-        {
-            ObjectToRotate.transform.localEulerAngles = new Vector3(0, 0, 270);
-        }
 
-        ObjectToRotate.transform.localEulerAngles = new Vector3(0, 0, this.gameObject.transform.eulerAngles.x);
-        //Debug.Log("Barrels Angle is now: " + ObjectToRotate.transform.eulerAngles.z);
+        float objectAngle = ObjectToRotate.transform.localEulerAngles.z;
+        //float objectAngle = ObjectToRotate.transform.localRotation.z;
+        //Debug.Log("Barrels Angle is now: " + objectAngle);
+
+        float newAngle = crankAngle - objectAngle;
+        Debug.Log("New Angle is now: " + newAngle);
+
+        ObjectToRotate.transform.Rotate(0,0,newAngle);
     }
 
     //protected virtual void ValueChanged(object sender, ControllableEventArgs e)

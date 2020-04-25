@@ -23,8 +23,15 @@ public class FiringSystem : MonoBehaviour
     public bool spinnningForward;
     public bool hasMagazine = false;
 
+    
+
     [SerializeField]
     private LayerMask mask;
+
+    private void Start()
+    {
+       
+    }
 
     public void OnTriggerEnter(Collider other)
     {
@@ -45,6 +52,7 @@ public class FiringSystem : MonoBehaviour
                 gunSoundSource.PlayOneShot(gunSoundSource.clip);
                 Instantiate(spentBullet, bulletDrop);
                 Shoot();
+                VibrationManager.singleton.TriggerVibration(gunSoundSource.clip, );
             }
             else
             {
@@ -61,6 +69,7 @@ public class FiringSystem : MonoBehaviour
 
     void Shoot()
     {
+
         RaycastHit _hit;
         if (Physics.Raycast(transform.position, -transform.up, out _hit, 1000, mask))
         {
