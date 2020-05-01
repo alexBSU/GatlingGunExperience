@@ -4,102 +4,74 @@ using VRTK.GrabAttachMechanics;
 
 public class BigWillyRotator : MonoBehaviour
 {
-    public VRTK_BaseControllable yawController;
+    //public VRTK_RotateTransformGrabAttach yawController;
     public Animator gunOscillator;
     public AudioSource yawWheelAudioSound;
     public AudioClip[] yawWheelClips;
-
     public Transform ObjectToRotate;
 
-    //public float crankAngle = 0;
-
+    private float oldCrankAngle;
+    private float newCrankAngle;
+    private float adjustedAngle;
     private bool osciallation = false;
 
-    protected virtual void OnEnable()
-    {
-        yawController = yawController == null ? GetComponent<VRTK_BaseControllable>() : yawController;
-    }
+    public static bool clockwise;
 
     void Update()
     {
-        float crankAngle = this.transform.localEulerAngles.x;
-        //float crankAngle = this.transform.localRotation.x;
-        //Debug.Log("CrankHandle Angle is now: " + crankAngle);
+        
+        //get the degrees from the crank x axis going from 0 to 360 (solves quaternion issues)
+        newCrankAngle = Mathf.Atan2(transform.forward.z, transform.forward.y) * Mathf.Rad2Deg;
+        if (newCrankAngle <= 0)
+        {
+            newCrankAngle += 360f;
+        }
+        //useing *-1 to turn the barrel the correct direction (clockwise)
+        ObjectToRotate.transform.localRotation = Quaternion.Euler(0, 0, newCrankAngle * -1);
 
-        float objectAngle = ObjectToRotate.transform.localEulerAngles.z;
-        //float objectAngle = ObjectToRotate.transform.localRotation.z;
-        //Debug.Log("Barrels Angle is now: " + objectAngle);
+        //the amount of change in nagle based on movement of the crank
+        adjustedAngle = newCrankAngle - oldCrankAngle;
 
-        float newAngle = crankAngle - objectAngle;
-        Debug.Log("New Angle is now: " + newAngle);
+        //setting a bool for Firingsystem to check before firing shoots
+        if (adjustedAngle > 0){
+            clockwise = true;
+        }
+        else
+        {
+            clockwise = false;
+        }
 
-        ObjectToRotate.transform.Rotate(0,0,newAngle);
+        //if the oscillation knob is turned on
+        if (osciallation)
+        {
+            //play the gun oscillation animation (back and forth)
+            gunOscillator.SetFloat("crankTime", adjustedAngle);
+        }
+        //get ref to current angle value
+        oldCrankAngle = newCrankAngle;
     }
 
-    //protected virtual void ValueChanged(object sender, ControllableEventArgs e)
-    //{
-    //    if (ObjectToRotate != null)
-    //    {
-            //float newValue = ObjectToRotate.transform.rotation.z;
-            //float newValue = crankRotation.GetValue();
-            //float crankValue = Mathf.Abs(newValue - lastValue);
+    public void OscillationON()
+    {
+        osciallation = true;
+        yawWheelAudioSound.clip = yawWheelClips[1];
+        yawWheelAudioSound.PlayOneShot(yawWheelAudioSound.clip);
 
-            //if (crankValue > 5)
-            //{
-            //    ObjectToRotate.Rotate(0, 0, -5, Space.Self);
+        OVRHapticsClip click = new OVRHapticsClip(yawWheelAudioSound.clip);
+        OVRHaptics.LeftChannel.Mix(click);
 
-            //}
-            //else if (Mathf.Abs(lastValue - newValue) > 5)
-            //{
-            //    ObjectToRotate.Rotate(0, 0, 5, Space.Self);                
-            //}
-            //else
-            //{
-            //    gunOscillator.SetFloat("crankTime", 0f);
-            //    Debug.Log("*******Do nothing******");
-            //}
+        Debug.Log("Oscillation is now true.");
+    }
+    public void OscillationOFF()
+    {
+        yawWheelAudioSound.clip = yawWheelClips[0];
+        yawWheelAudioSound.PlayOneShot(yawWheelAudioSound.clip);
 
-            //if (osciallation == true)
-            //{
-            //    gunOscillator.SetFloat("crankTime", crankValue);
-            //}
+        OVRHapticsClip click = new OVRHapticsClip(yawWheelAudioSound.clip);
+        OVRHaptics.LeftChannel.Mix(click);
 
-            //lastValue = newValue;
-    //    }
-    //}
+        Debug.Log("Oscillation is now false");
+        osciallation = false;
+    }
 
-    //protected virtual void yawValueChanged(object sender, ControllableEventArgs e)
-    //{
-    //    if (yawController.GetValue() >= 90 && osciallation == false)
-    //    {
-    //        osciallation = true;
-    //        yawWheelAudioSound.clip = yawWheelClips[1];
-    //        yawWheelAudioSound.PlayOneShot(yawWheelAudioSound.clip);
-    //        Debug.Log("Oscillation is now true.");
-    //    }
-    //    if (yawController.GetValue() <= 90 && osciallation == true)
-    //    {
-    //        yawWheelAudioSound.clip = yawWheelClips[0];
-    //        yawWheelAudioSound.PlayOneShot(yawWheelAudioSound.clip);
-    //        Debug.Log("Oscillation is now false");
-    //        osciallation = false;
-    //    }
-    //}
-
-    //public void TurnBarrels(){
-    //    //float currentAngle = ObjectToRotate.transform.localRotation.eulerAngles.z;
-    //    //float  newAngle = currentAngle + 1;
-    //    //Debug.Log("The current angle of the Barrels is: " + currentAngle);
-
-    //    ObjectToRotate.Rotate(0, 0, crankAngle);
-    //}
-
-    //public void TurnbarrelsReverse()
-    //{
-    //    //float currentAngle = ObjectToRotate.transform.localRotation.eulerAngles.z;
-    //    //float newAngle = currentAngle - 1;
-    //    //Debug.Log("The current angle of the Barrels is: " + currentAngle);
-
-    //    ObjectToRotate.Rotate(0, 0, crankAngle);
-    //}
 }

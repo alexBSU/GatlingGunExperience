@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using VRTK;
 
 public class FiringSystem : MonoBehaviour
@@ -23,53 +21,68 @@ public class FiringSystem : MonoBehaviour
     public bool spinnningForward;
     public bool hasMagazine = false;
 
-    
+    MagazineAmmo magazine;
+
+    OVRHapticsClip pop;
+    OVRHapticsClip dry;
 
     [SerializeField]
     private LayerMask mask;
 
     private void Start()
     {
-       
+        pop = new OVRHapticsClip(audioClipArray[1]);
+        dry = new OVRHapticsClip(audioClipArray[0]);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         CheckMag();
-        CheckSpinDirection();
-        MagazineAmmo magazine = currentMagazine.GetComponent<MagazineAmmo>();
-        currentAmmo = magazine.currentmagazineAmmo;
-
-        Debug.Log("The current magazine is: " + magazine.name + "*********************");
-
-        if(hasMagazine == true)
+        if (currentMagazine != null)
         {
-            if (currentAmmo > 0)
+            MagazineAmmo magazine = currentMagazine.GetComponent<MagazineAmmo>();
+
+            currentAmmo = magazine.currentmagazineAmmo;
+
+            Debug.Log("The current magazine is: " + magazine.name + "*********************");
+
+            if (hasMagazine == true)
             {
-                magazine.ExpendAmmo();
-                gunFlash.Play();
-                gunSoundSource.clip = audioClipArray[1];
-                gunSoundSource.PlayOneShot(gunSoundSource.clip);
-                Instantiate(spentBullet, bulletDrop);
-                Shoot();
-                VibrationManager.singleton.TriggerVibration(gunSoundSource.clip, );
-            }
-            else
-            {
-                gunSoundSource.clip = audioClipArray[0];
-                gunSoundSource.PlayOneShot(gunSoundSource.clip);
+                if (currentAmmo > 0 && BigWillyRotator.clockwise)
+                {
+                    //OVRHapticsClip pop = new OVRHapticsClip(gunSoundSource.clip);
+                    OVRHaptics.RightChannel.Mix(pop);
+                    OVRHaptics.LeftChannel.Mix(pop);
+
+                    magazine.ExpendAmmo();
+                    gunFlash.Play();
+                    gunSoundSource.clip = audioClipArray[1];
+                    gunSoundSource.PlayOneShot(gunSoundSource.clip);
+                    Instantiate(spentBullet, bulletDrop);
+                    Shoot();
+                }
+                else
+                {
+                    gunSoundSource.clip = audioClipArray[0];
+                    gunSoundSource.PlayOneShot(gunSoundSource.clip);
+
+                    //OVRHapticsClip dry = new OVRHapticsClip(gunSoundSource.clip);
+                    OVRHaptics.RightChannel.Mix(dry);
+                }
             }
         }
         else
         {
             gunSoundSource.clip = audioClipArray[0];
             gunSoundSource.PlayOneShot(gunSoundSource.clip);
+
+            //OVRHapticsClip dry = new OVRHapticsClip(gunSoundSource.clip);
+            OVRHaptics.RightChannel.Mix(dry);
         }
     }
 
     void Shoot()
     {
-
         RaycastHit _hit;
         if (Physics.Raycast(transform.position, -transform.up, out _hit, 1000, mask))
         {
@@ -119,13 +132,6 @@ public class FiringSystem : MonoBehaviour
      public void CheckMag()
     {
         currentMagazine = magazineSnapZone.GetComponent<VRTK_SnapDropZone>().GetCurrentSnappedObject();
-    }
-
-    public void CheckSpinDirection()
-    {
-        //if spinning clockwise spinningForward = true;
-        
-        //else spinningForward = false;
     }
 
     public void HasMagazine()

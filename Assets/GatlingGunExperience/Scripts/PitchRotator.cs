@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using VRTK.Controllables;
 
 public class PitchRotator : MonoBehaviour
 {
     public VRTK_BaseControllable controllable;
     public Transform ObjectToPitch;
+    public Transform pinScrew;
     private float lastValue;
 
     protected virtual void OnEnable()
@@ -22,19 +21,19 @@ public class PitchRotator : MonoBehaviour
         {
             float newValue = controllable.GetValue();
 
-            if (newValue - lastValue > Mathf.Abs(4))
+            if (newValue - lastValue > 0)
             {
                 Debug.Log(ObjectToPitch + " is now pitching up************************.");
-                ObjectToPitch.Rotate(0.5f, 0, 0, Space.Self);
+                ObjectToPitch.Rotate(0.2f, 0, 0, Space.Self);
+
+                pinScrew.transform.Translate(0.05f * Vector3.up * Time.deltaTime);
             }
-            else if (lastValue - newValue > Mathf.Abs(4))
+            else if (newValue - lastValue < 0)
             {
                 Debug.Log(ObjectToPitch + " is now pitching down*************************.");
-                ObjectToPitch.Rotate(-0.5f, 0, 0, Space.Self);
-            }
-            else
-            {
-                Debug.Log("*******Do nothing******");
+                ObjectToPitch.Rotate(-0.2f, 0, 0, Space.Self);
+
+                pinScrew.transform.Translate(-0.05f * Vector3.up * Time.deltaTime);
             }
 
             lastValue = newValue;

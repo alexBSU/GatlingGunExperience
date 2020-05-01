@@ -8,10 +8,17 @@ public class TNTDamage : MonoBehaviour
     public ParticleSystem explosion;
     public GameObject wagonCart;
     public GameObject wagonCartWrecked;
+    public AudioClip boom;
+    OVRHapticsClip splode;
 
     [Header("Explosion Settings")]
     public float eplosionRadius;
     public float explosionForce;
+
+    private void Start()
+    {
+        splode = new OVRHapticsClip(boom);
+    }
 
     private void FixedUpdate()
     {
@@ -25,8 +32,16 @@ public class TNTDamage : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(explosion, transform.position, Quaternion.Euler(0, 0, 0));
-        Destroy(wagonCart);
-        Instantiate(wagonCartWrecked, wagonCart.transform.position, wagonCart.transform.rotation);
+
+        //OVRHapticsClip splode = new OVRHapticsClip(boom);
+        OVRHaptics.RightChannel.Mix(splode);
+        OVRHaptics.LeftChannel.Mix(splode);
+
+        if (wagonCart != null)
+        {
+            Destroy(wagonCart);
+            Instantiate(wagonCartWrecked, wagonCart.transform.position, wagonCart.transform.rotation);
+        }
 
         Collider[] objects = Physics.OverlapSphere(transform.position, eplosionRadius);
         foreach (Collider h in objects)
