@@ -28,6 +28,9 @@ public class FaderScript : MonoBehaviour
         {
             blackout = GameObject.FindWithTag("Blackout").GetComponent<Image>();
         }
+
+        blackout.enabled = false;
+        FadeOut();
     }
 
     public void FadeOut()
@@ -55,11 +58,10 @@ public class FaderScript : MonoBehaviour
                 SetColorImage(ref alpha, fadeDirection);
                 yield return null;
             }
-            fadeOutUIImage.enabled = false;
+            
         }
         else
         {
-            fadeOutUIImage.enabled = true;
             while (alpha <= fadeEndValue)
             {
                 SetColorImage(ref alpha, fadeDirection);

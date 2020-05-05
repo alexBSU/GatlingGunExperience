@@ -26,6 +26,8 @@ TagManager:
   - MyCustomHand_L
   - Wagon
   - TNT
+  - Menu
+  - NavMenu
   layers:
   - Default
   - TransparentFX
@@ -41,7 +43,7 @@ TagManager:
   - Bullet
   - Targets
   - GrabLayer
-  - 
+  - MenuButton
   - 
   - 
   - 
