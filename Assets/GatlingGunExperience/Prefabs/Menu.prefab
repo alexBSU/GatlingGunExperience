@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017502569267726269}
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0.000000007450579, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: -2.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9033543410935732435}
@@ -553,7 +553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017502570360286908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1017502569989480745}
@@ -1027,11 +1027,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button_Shoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4262612944381623957, guid: 0eb4aa31d8c7de74287140ffefc18dd1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6037402407163241719, guid: 0eb4aa31d8c7de74287140ffefc18dd1,
         type: 3}
