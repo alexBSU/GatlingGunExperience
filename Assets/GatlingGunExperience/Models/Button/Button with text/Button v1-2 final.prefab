@@ -107,9 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textSpeed: 0.05
   textDelay: 0.05
+  trackConsole: {fileID: 0}
+  scriptPaused: 0
   audioScripts:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -123,11 +123,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   background: {fileID: 0}
   activeMat: {fileID: 2100000, guid: 7c1cbf7b94491f54baac3e7cf95d7029, type: 2}
   deactiveMat: {fileID: 2100000, guid: c96ba27abd17b134d993215d193fc7bb, type: 2}
+  mainButtonPlaque: {fileID: 0}
+  fireRateConsole: {fileID: 0}
+  fireRateGraphicsUI: {fileID: 0}
 --- !u!1 &38287977701962979
 GameObject:
   m_ObjectHideFlags: 0
