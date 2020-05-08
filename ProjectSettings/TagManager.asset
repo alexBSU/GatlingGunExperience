@@ -28,6 +28,7 @@ TagManager:
   - TNT
   - Menu
   - NavMenu
+  - music
   layers:
   - Default
   - TransparentFX
